@@ -25,8 +25,7 @@ title: YongHeon # the main title
 
 tagline: Yongheon's development blog # it will display as the sub-title
 
-description: >- # used by seo meta and the atom feed
-  Yongheon's development blog
+description: Yongheon's development blog
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://yongheonn.github.io"
@@ -40,7 +39,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
+  name: yongheon
   email: example@doamin.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
