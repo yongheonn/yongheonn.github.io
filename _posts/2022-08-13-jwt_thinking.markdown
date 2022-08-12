@@ -6,4 +6,4 @@ categories: [백엔드, 개발 고민]
 tags: [jwt, refresh token, access token]
 ---
 
-## jwt vs 세션
+### jwt vs 세션
