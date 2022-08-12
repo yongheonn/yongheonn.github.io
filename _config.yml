@@ -21,7 +21,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Yongheon's blog # the main title
+title: YongHeon # the main title
 
 tagline: A text-focused Jekyll theme # it will display as the sub-title
 
@@ -74,6 +74,8 @@ google_analytics:
 #     dark   - Use the dark color scheme
 #
 theme_mode: # [light|dark]
+
+future: ture
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
