@@ -17,7 +17,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0 # for posts's lastmod
-          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
