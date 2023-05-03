@@ -10,8 +10,8 @@ tags: [notice-board, plan]
 ## Front-end
 
 - flux 패턴 공부, redux 도입 고민
-- 글작성 div contenteditable 속성 이용해서 구현
-- 글 수정 및 삭제 기능 구현
+- 글작성 div contenteditable 속성 이용해서 구현 (해결)
+- 글 수정 및 삭제 기능 구현 (해결)
 - 댓글 기능 구현
 - 댓글 기능 등에 lazy loading 이용
 - /\*\* \*/ 주석을 이용한 코드 설명
@@ -24,8 +24,10 @@ tags: [notice-board, plan]
 - 데이터베이스 테이블 정규화 점검
 - 주석 활용
 - 댓글 관련 db, 서비스 구현
+- board나 subject 작성 내용에서 image나 video 태그 들어왔을 때, 크기 조절 속성 등 자동으로 삽입
+- OAuth 2.0 Login 지원 (해결)
 
 ## Dev-ops
 
-- 클라우드 서버를 이용한 배포
-- github action을 이용한 자동 배포
+- 클라우드 서버를 이용한 배포 (해결)
+- github action을 이용한 자동 배포 (해결)
