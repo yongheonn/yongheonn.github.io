@@ -23,6 +23,8 @@ tags: [aws, s3, lambda, nodejs, cache, metadata]
 
 위 문제는 aws lambda를 이용해서 해결했다. aws lambda에서 s3 대상으로 생성 이벤트와 접두사 static/과 index.html일 때의 두개의 트리거를 생성했다.
 
+// 추후 favicon.ico logo???.png img 폴더 등의 이미지도 트리거 대상에 포함하고, 1주일 정도의 캐시를 적용했다.
+
 여기서 나는 nodejs 18을 이용해서 코드를 작성했고, 몇번의 시행착오 끝에 결국 자동화를 해냈다.
 
 여기서 주의점은 nodejs 18은 이전 버젼과 달리 s3client를 import해야 했다.
