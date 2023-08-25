@@ -13,7 +13,7 @@ tags: [notice-board, plan]
 - 글작성 div contenteditable 속성 이용해서 구현 (해결)
 - 글 수정 및 삭제 기능 구현 (해결)
 - 댓글 기능 구현
-- 댓글 기능 등에 lazy loading 이용
+- 댓글 기능 및 이미지 등에 lazy loading 이용
 - /\*\* \*/ 주석을 이용한 코드 설명
 - import 문법이나 react.lazy를 이용한 코드 분할
 - 서버와의 비동기 처리에서 react-query 이용
@@ -26,6 +26,7 @@ tags: [notice-board, plan]
 - 댓글 관련 db, 서비스 구현
 - board나 subject 작성 내용에서 image나 video 태그 들어왔을 때, 크기 조절 속성 등 자동으로 삽입
 - OAuth 2.0 Login 지원 (해결)
+- 기존 system.out.println 대신 log를 활용하여 기록하기
 
 ## Dev-ops
 

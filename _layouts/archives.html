@@ -6,8 +6,8 @@ layout: page
 {% include lang.html %}
 
 {% if site.prefer_datetime_locale == 'en' or lang == 'en' %}
-  {% assign df_strftime_m = '%b' %}
-  {% assign df_dayjs_m = 'MMM' %}
+  {% assign df_strftime_d = '%d' %}
+  {% assign df_dayjs_d = 'DDD' %}
 {% else %}
   {% assign df_strftime_d = ' / %d' %}
   {% assign df_dayjs_d = ' / DD' %}
