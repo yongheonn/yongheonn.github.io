@@ -20,7 +20,13 @@ tags: [cors, 502, 504, origin, aws, cloudflare]
 하지만 여전히 에러가 뜨는 것은 여전했고, ssh 연결을 통해 내부에서 curl 명령어로 확인해본 결과, 내부 8080 포트는 연결이 잘 되고 있었고, 밖에서도 http://ec2-43-200-79-234.ap-northeast-2.compute.amazonaws.com:8080/ajax/subject/all 로 curl을 던져보니 결과를 잘 받아왔다.  
 그렇기에 loadbalancing 부분이나 cloudflare 부분에서 뭔가 잘못되었다는 결론을 내렸다.
 
-그리고, 실제로 로드밸런싱의 http://yongheonn-loadbalancer-262576260.ap-northeast-2.elb.amazonaws.com:8080 로 curl을 실행해보니 긴 시간후 connection failed를 응답했고, aws loadbalancing 탭에서 대상 그룹으로 전달 부분을 따라가보니 등록된 대상의 상태 확인에 unhealthy라는 문제를 발견할 수 있었다.
+그리고, 실제로 로드밸런싱의 http://yongheonn-loadbalancer-262576260.ap-northeast-2.elb.amazonaws.com:8080 로 curl을 실행해보니 긴 시간후 connection failed를 응답했다.  
+curl로 http://yongheonn-loadbalancer-262576260.ap-northeast-2.elb.amazonaws.com:8080가 아닌 https://yongheonn-loadbalancer-262576260.ap-northeast-2.elb.amazonaws.com 로 줬을때, 반응이 생겼었다.  
+하지만 올바른 인증서가 아니라 하여 인증서 문제인줄 알고, acm 인증서를 확인하니 만료되어 있어, acm 인증서 발급을 요청하여 새로 발급하고, 이를 로드밸런싱에 연결한 다음, cloudflare에 dns로 등록해주었다.  
+하지만, 이래도 이상한 반응을 보였는데, curl을 통한 ssl 인증서 관련 오류는 무시해도 좋다는 글들을 읽을 수 있었고, 다시 -k 옵션을 주니 502 에러가 떴다.  
+즉, 로드밸런싱 문제는 확실하다는 것으로 인증서 문제는 아니었던 것이다.
+
+aws loadbalancing 탭에서 대상 그룹으로 전달 부분을 따라가보니 등록된 대상의 상태 확인에 unhealthy라는 문제를 발견할 수 있었다.
 
 인터넷에서 관련 정보를 찾아본 결과, loadbalancer는 기본 주소, 즉 "/"로 health check를 실행한다고 한다.  
 즉, 서버가 건강한지 주기적으로 기본 주소로 체크를 하는데, 내 백엔드 프로젝트에서는 api 역할만 신경쓰고, 기본 주소로 들어오는 요청에 대한 로직을 설정해두지 않았기 때문에, 건강하지 못한 서버로 판단되고, 요청을 거절하고 있었던 것이다.
