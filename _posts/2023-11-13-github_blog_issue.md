@@ -1,5 +1,5 @@
 ---
-title: Liquid Exception: undefined method `gsub' for 502:Integer in
+title: Liquid Exception':' undefined method gsub for 502:Integer in
 date: 2023-11-13 22:00:00 +09:00
 categories: [웹, 개발 고민]
 tags: [Integer, error, github, blog, action]
@@ -13,7 +13,7 @@ tags: [Integer, error, github, blog, action]
 확인을 안하고 넘어간 탓에 모르고 있었던 것이다.  
 그렇게 오류 내역을 찬찬히 살펴보는데,
 
-` Liquid Exception: undefined method ``gsub' for 502:Integer in /home/runner/work/yongheonn.github.io/yongheonn.github.io/_layouts/post.html `
+`Liquid Exception: undefined method gsub' for 502:Integer in /home/runner/work/yongheonn.github.io/yongheonn.github.io/_layouts/post.html`
 
 앞선 내용의 에러를 확인할 수 있었다.  
 처음엔 그냥 생각없이 대충 말그대로 \_layout 폴더의 post.html부터 찾아가 에러를 고치려 했다.  
