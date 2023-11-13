@@ -1,5 +1,5 @@
 ---
-title: Liquid Exception':' undefined method gsub for 502:Integer in
+title: "Liquid Exception: undefined method gsub for 502:Integer in"
 date: 2023-11-13 22:00:00 +09:00
 categories: [웹, 개발 고민]
 tags: [Integer, error, github, blog, action]
